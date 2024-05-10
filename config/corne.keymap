@@ -31,13 +31,13 @@
                 layer_1 {
 // -----------------------------------------------------------------------------------------
 // |  TAB | PGDN |     |  UP |     | PGUP |   | INS |     |     |     |     | BKSP |
-// | CTRL |  ESC | LFT | DWN | RGT | SCRN |   | DEL | skC | skA | skS | skG |      |
-// | SHFT |  skC | skA | skS | skG |      |   |     |     |     |     |     |      |
+// | CTRL |  ESC | LFT | DWN | RGT | SCRN |   | DEL |     |     |     |     |      |
+// | SHFT |  skC | skA | skS | skG |      |   |     | skG | skS | skA | skC | SHFT |
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans   &trans     &trans     &kp BSPC
-   &kp LCTRL  &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &sk LSHFT  &sk LCTRL  &sk LALT &sk LGUI   &trans
-   &kp LSHFT  &sk LSHFT    &sk LCTRL    &sk LALT     &sk LGUI     &trans      &kp CLCK    &trans     &trans   &trans     &trans     &kp RSHFT
+   &kp LCTRL  &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans   &trans     &trans     &trans
+   &kp LSHFT  &sk LSHFT    &sk LCTRL    &sk LALT     &sk LGUI     &trans      &kp CLCK    &sk LGUI   &sk LALT &sk LCTRL  &sk LSHFT  &kp RSHFT
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
