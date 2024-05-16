@@ -107,28 +107,28 @@
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&sk LCTRL>, <&kp LCTRL>
+                    bindings = <&sk LCTRL>, <&kp LCTRL>;
                 };
 
                 skkC: stickey_keyPress_Control {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&sk LSHFT>, <&kp LSHFT>
+                    bindings = <&sk LSHFT>, <&kp LSHFT>;
                 };
 
                 skkA: stickey_keyPress_Alt {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&sk LALT>, <&kp LALT>
+                    bindings = <&sk LALT>, <&kp LALT>;
                 };
 
                 skkG: stickey_keyPress_GUI {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&sk LGUI>, <&kp LGUI>
+                    bindings = <&sk LGUI>, <&kp LGUI>;
                 };
         };
 
