@@ -35,7 +35,7 @@
 // | SHFT |  skC | skA | skS | skG |      |   |     | skG | skS | skA | skC | SHFT |
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans    &trans      d&trans     &kp BSPC
+   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans    &trans      &trans     &kp BSPC
    &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans    &trans      &trans      &trans
    &trans     &skp LSHFT   &skp LCTRL   &skp LALT    &skp LGUI    &trans      &kp CLCK    &skp LGUI  &skp LALT &skp LCTRL  &skp LSHFT  &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
