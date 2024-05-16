@@ -24,7 +24,7 @@
    &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I         &kp O        &kp P        &kp BSPC
    &kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K         &kp L        &kp SEMI     &kp SQT
    &kp ESC   &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT      &kp FSLH     &sk RSHFT 
-                  &kp LGUI &lt 1 LCTRL &kp SPACE   &kp RET &lt 2 LSHFT &kp RALT
+                  &kp LGUI &tdl1 &kp SPACE   &kp RET &tdl2 &kp RALT
                         >;
                 };
 
@@ -49,9 +49,9 @@
 // | SHFT | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 | SHFT |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6       &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
-   &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
-   &trans     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7       &kp F8          &kp F9     &kp F10     &trans
+   &kp TAB    &kp N1    &kp N2    &kp N3     &kp N4    &kp N5      &kp N6       &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
+   &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR  &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
+   &trans     &skkS     &skkC     &skkA      &skkG     &trans      &kp CLCK     &skkG        &skkA           &skkC      &skkS       &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -65,7 +65,7 @@
                         bindings = <
    &kp TAB   &kp TILDE    &kp GRAVE &kp UNDER  &kp MINUS   &trans      &trans     &kp PLUS   &kp EQUAL  &kp BSLH   &kp PIPE   &kp BSPC
    &trans    &trans       &kp LPAR  &kp LBKT   &kp LBRC    &trans      &trans     &kp RBRC   &kp RBKT   &kp RPAR   &kp COLON  &kp DQT  
-   &trans    &trans       &trans    &trans     &trans      &trans      &trans     &trans     &kp LT     &kp GT     &kp QMARK  &trans 
+   &trans    &skkS        &skkC     &skkA      &skkG       &trans      &trans     &trans     &kp LT     &kp GT     &kp QMARK  &trans 
                            &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &out OUT_TOG
                         >;
                 };
@@ -79,7 +79,7 @@
                         bindings = <
    &kp TAB    &trans       &trans    &trans    &trans    &trans      &trans       &trans       &trans          &trans          &trans         &trans
    &trans     &trans       &trans    &trans    &trans    &trans      &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4
-   &trans     &trans       &trans    &trans    &trans    &trans      &trans       &trans       &trans          &trans          &trans         &trans
+   &trans     &kp F1       &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7       &kp F8          &kp F9          &kp F10        &trans
                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -103,14 +103,14 @@
         };
 
         behaviors {
-                skkS: stickey_keyPress_Shift {
+                skkC: stickey_keyPress_Control {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
                     bindings = <&sk LCTRL>, <&kp LCTRL>;
                 };
 
-                skkC: stickey_keyPress_Control {
+                skkS: stickey_keyPress_Shift {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
@@ -129,6 +129,20 @@
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
                     bindings = <&sk LGUI>, <&kp LGUI>;
+                };
+
+                tdl1: tap_dance_layer_1 {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&mo 1>, <&tog 1>;
+                };
+
+                tdl2: tap_dance_layer_2 {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&mo 2>, <&tog 2>;
                 };
         };
 
