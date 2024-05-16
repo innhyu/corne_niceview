@@ -22,9 +22,9 @@
 //                    | GUI | MO1 | SPC |   | ENT | MO2  | ALT |
                         bindings = <
    &kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I         &kp O        &kp P        &kp BSPC
-   &sk LCTRL &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K         &kp L        &kp SEMI     &kp SQT
-   &sk LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT      &kp FSLH     &sk RSHFT 
-                  &kp LGUI &adv_tdl_1 LCTRL &kp SPACE   &kp RET &adv_tdl_2 LSHFT &kp RALT
+   &kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K         &kp L        &kp SEMI     &kp SQT
+   &kp ESC   &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT      &kp FSLH     &sk RSHFT 
+                  &kp LGUI &lt 1 LCTRL &kp SPACE   &kp RET &lt 2 LSHFT &kp RALT
                         >;
                 };
 
@@ -35,9 +35,9 @@
 // | SHFT |  skC | skA | skS | skG |      |   |     | skG | skS | skA | skC | SHFT |
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans   &trans     &trans     &kp BSPC
-   &kp LCTRL  &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans   &trans     &trans     &trans
-   &kp LSHFT  &sk LSHFT    &sk LCTRL    &sk LALT     &sk LGUI     &trans      &kp CLCK    &sk LGUI   &sk LALT &sk LCTRL  &sk LSHFT  &kp RSHFT
+   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans    &trans      d&trans     &kp BSPC
+   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans    &trans      &trans      &trans
+   &trans     &skp LSHFT   &skp LCTRL   &skp LALT    &skp LGUI    &trans      &kp CLCK    &skp LGUI  &skp LALT &skp LCTRL  &skp LSHFT  &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -50,8 +50,8 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6       &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
-   &kp LCTRL  &kp EXCL  &kp AT    &kp HASH   &kp DLLR &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
-   &kp LSHFT  &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7       &kp F8          &kp F9     &kp F10     &kp RSHFT
+   &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
+   &trans     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7       &kp F8          &kp F9     &kp F10     &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -64,8 +64,8 @@
 //                    | GUI |     | SPC |   | ENT |     | OUT |
                         bindings = <
    &kp TAB   &kp TILDE    &kp GRAVE &kp UNDER  &kp MINUS   &trans      &trans     &kp PLUS   &kp EQUAL  &kp BSLH   &kp PIPE   &kp BSPC
-   &kp LCTRL &trans       &kp LPAR  &kp LBKT   &kp LBRC    &trans      &trans     &kp RBRC   &kp RBKT   &kp RPAR   &kp COLON  &kp DQT  
-   &kp LSHFT &trans       &trans    &trans     &trans      &trans      &trans     &trans     &kp LT     &kp GT     &kp QMARK  &kp RSHFT  
+   &trans    &trans       &kp LPAR  &kp LBKT   &kp LBRC    &trans      &trans     &kp RBRC   &kp RBKT   &kp RPAR   &kp COLON  &kp DQT  
+   &trans    &trans       &trans    &trans     &trans      &trans      &trans     &trans     &kp LT     &kp GT     &kp QMARK  &trans 
                            &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &out OUT_TOG
                         >;
                 };
@@ -103,36 +103,11 @@
         };
 
         behaviors {
-                tdl1: tap_dance_layer_1 {
+                skp: sticky_keypress {
                     compatible = "zmk,behavior-tap-dance";
                     #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&mo 1>, <&tog 1>;
-                };
-
-                tdl2: tap_dance_layer_2 {
-                    compatible = "zmk,behavior-tap-dance";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&mo 2>, <&tog 2>;
-                };
-
-                // Tap to sticky, Then other TDL
-                adv_tdl_1: advanced_tap_dance_layer_1 {
-                    compatible = "zmk,behavior-hold-tap";
-                    #binding-cells = <2>;
-                    flavor = "tap-preferred";
-                    tapping-term-ms = <200>;
-                    bindings = <&sk>, <&tdl1>;
-                };
-
-                // Tap to sticky, Then other TDL
-                adv_tdl_2: advanced_tap_dance_layer_2 {
-                    compatible = "zmk,behavior-hold-tap";
-                    #binding-cells = <2>;
-                    flavor = "tap-preferred";
-                    tapping-term-ms = <200>;
-                    bindings = <&sk>, <&tdl2>;
+                    tapping-term-ms = <150>;
+                    bindings = <&sk>, <&kp>;
                 };
         };
 
