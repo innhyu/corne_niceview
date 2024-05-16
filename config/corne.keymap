@@ -124,7 +124,7 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     bindings = <&sk>, <&tdl1>;
-                }
+                };
 
                 // Tap to sticky, Then other TDL
                 adv_tdl_2: advanced_tap_dance_layer_2 {
@@ -133,7 +133,7 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     bindings = <&sk>, <&tdl2>;
-                }
+                };
         };
 
 };
