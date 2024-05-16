@@ -122,7 +122,7 @@
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
-                    tapping-term-ms = <200>;'
+                    tapping-term-ms = <200>;
                     bindings = <&sk>, <&tdl1>;
                 }
 
@@ -131,7 +131,7 @@
                     compatible = "zmk,behavior-hold-tap";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
-                    tapping-term-ms = <200>;'
+                    tapping-term-ms = <200>;
                     bindings = <&sk>, <&tdl2>;
                 }
         };
