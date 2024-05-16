@@ -36,8 +36,8 @@
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans    &trans      &trans     &kp BSPC
-   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans    &trans      &trans      &trans
-   &trans     &skp LSHFT   &skp LCTRL   &skp LALT    &skp LGUI    &trans      &kp CLCK    &skp LGUI  &skp LALT &skp LCTRL  &skp LSHFT  &trans
+   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans    &trans      &trans     &trans
+   &trans     &skkS        &skkC        &skkA        &skkG        &trans      &kp CLCK    &skkG      &skkA     &skkC       &skkS      &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
@@ -103,13 +103,32 @@
         };
 
         behaviors {
-                skp: sticky_keypress {
-                    compatible = "zmk,behavior-hold-tap";
-                    #binding-cells = <2>;
-                    tapping-term-ms = <150>;
-                    quick-tap-ms = <0>;
-                    flavor = "tap-preferred";
-                    bindings = <&sk>, <&kp>;
+                skkS: stickey_keyPress_Shift {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&sk LCTRL>, <&kp LCTRL>
+                };
+
+                skkC: stickey_keyPress_Control {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&sk LSHFT>, <&kp LSHFT>
+                };
+
+                skkA: stickey_keyPress_Alt {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&sk LALT>, <&kp LALT>
+                };
+
+                skkG: stickey_keyPress_GUI {
+                    compatible = "zmk,behavior-tap-dance";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&sk LGUI>, <&kp LGUI>
                 };
         };
 
