@@ -104,9 +104,11 @@
 
         behaviors {
                 skp: sticky_keypress {
-                    compatible = "zmk,behavior-tap-dance";
-                    #binding-cells = <0>;
+                    compatible = "zmk,behavior-hold-tap";
+                    #binding-cells = <2>;
                     tapping-term-ms = <150>;
+                    quick-tap-ms = <0>;
+                    flavor = "tap-preferred";
                     bindings = <&sk>, <&kp>;
                 };
         };
