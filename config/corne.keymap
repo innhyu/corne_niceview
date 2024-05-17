@@ -21,9 +21,9 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | MO1 | SPC |   | ENT | MO2  | ALT |
                         bindings = <
-   &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I         &kp O        &kp P        &kp BSPC
-   &sk LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K         &kp L        &kp SEMI     &kp SQT
-   &sk LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT      &kp FSLH     &sk RSHFT 
+   &kp  TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I         &kp O        &kp P        &kp  BSPC
+   &skq LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K         &kp L        &kp SEMI     &kp  SQT
+   &skq LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT      &kp FSLH     &skq RSHFT 
                   &caps_word &tdl1 &kp SPACE   &kp RET &tdl2 &caps_word
                         >;
                 };
@@ -35,9 +35,9 @@
 // | SHFT |  skC | skA | skS | skG |      |   |     | skG | skS | skA | skC | SHFT |
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &trans     &trans    &trans      &trans     &kp BSPC
-   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &kp DEL     &trans     &trans    &trans      &trans     &trans
-   &trans     &skkS        &skkC        &skkA        &skkG        &trans      &kp CLCK    &skkG      &skkA     &skkC       &skkS      &trans
+   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &kp DEL    &kp CLCK  &kp RALT    &trans     &kp BSPC
+   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &trans      &trans     &trans    &trans      &trans     &trans
+   &trans     &skkS        &skkC        &skkA        &skkG        &trans      &trans      &skkG      &skkA     &skkC       &skkS      &trans
                           	        &trans       &trans       &kp SPACE      &kp RET  &trans   &trans
                         >;
                 };
@@ -46,12 +46,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | CTRL |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |
-// | SHFT | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 | SHFT |
+/ || SHFT | skC | skA | skS | skG |     |   |     | skG | skS | skA | skC | SHFT |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp N1    &kp N2    &kp N3     &kp N4    &kp N5      &kp N6       &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
    &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR  &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
-   &trans     &skkS     &skkC     &skkA      &skkG     &trans      &kp CLCK     &skkG        &skkA           &skkC      &skkS       &trans
+   &trans     &skkS     &skkC     &skkA      &skkG     &trans      &trans       &skkG        &skkA           &skkC      &skkS       &trans
                           	        &trans         &trans       &kp SPACE      &kp RET  &trans   &trans
                         >;
                 };
@@ -143,6 +143,15 @@
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
                     bindings = <&mo 2>, <&tog 2>;
+                };
+
+                skq: sticky_key_quick_release {
+                        compatible = "zmk,behavior-sticky-key";
+                        #binding-cells = <1>;
+                        bindings = <&kp>;
+                        release-after-ms = <1000>;
+                        quick-release;
+                        ignore-modifiers;
                 };
         };
 
