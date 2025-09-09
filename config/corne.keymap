@@ -35,10 +35,10 @@
 // | SHFT |  skC | skA | skS | skG |      |   |     | skG | skS | skA | skC | SHFT |
 //                     | GUI |     | SPC  |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP   &kp INS     &kp DEL    &kp CLCK  &kp RALT    &trans     &kp BSPC
-   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN   &trans      &trans     &trans    &trans      &trans     &trans
-   &trans     &skkS        &skkC        &skkA        &skkG        &trans      &trans      &skkG      &skkA     &skkC       &skkS      &trans
-                          	        &trans       &trans       &kp SPACE      &kp RET  &trans   &trans
+   &kp TAB    &kp PG_DN    &trans       &kp UP       &trans       &kp PG_UP      &kp INS     &kp DEL    &kp CLCK  &kp RALT    &trans     &kp BSPC
+   &trans     &kp ESC      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PSCRN      &trans      &trans     &trans    &trans      &trans     &trans
+   &trans     &skkS        &skkC        &skkA        &skkG        &kp GLOBE      &kp GLOBE   &skkG      &skkA     &skkC       &skkS      &trans
+                          	        &trans       &trans       &kp SPACE      &kp RET     &trans   &trans
                         >;
                 };
 
@@ -49,10 +49,10 @@
 // | SHFT | skC | skA | skS | skG |     |   |     | skG | skS | skA | skC | SHFT |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1    &kp N2    &kp N3     &kp N4    &kp N5      &kp N6       &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
-   &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR  &kp PRCNT   &kp CARET    &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
-   &trans     &skkS     &skkC     &skkA      &skkG     &trans      &trans       &skkG        &skkA           &skkC      &skkS       &trans
-                          	        &trans         &trans       &kp SPACE      &kp RET  &trans   &trans
+   &kp TAB    &kp N1    &kp N2    &kp N3     &kp N4    &kp N5         &kp N6        &kp N7       &kp N8          &kp N9     &kp N0      &kp BSPC
+   &trans     &kp EXCL  &kp AT    &kp HASH   &kp DLLR  &kp PRCNT      &kp CARET     &kp AMPS     &kp KP_ASTERISK &kp LPAR   &kp RPAR    &trans
+   &trans     &skkS     &skkC     &skkA      &skkG     &kp GLOBE      &kp GLOBE     &skkG        &skkA           &skkC      &skkS       &trans
+                                  &trans     &trans    &kp SPACE      &kp RET       &trans       &trans
                         >;
                 };
 
@@ -65,8 +65,8 @@
                         bindings = <
    &kp TAB   &kp TILDE    &kp GRAVE &kp UNDER  &kp MINUS   &trans      &trans     &kp PLUS   &kp EQUAL  &kp BSLH   &kp PIPE   &kp BSPC
    &trans    &trans       &kp LPAR  &kp LBKT   &kp LBRC    &trans      &trans     &kp RBRC   &kp RBKT   &kp RPAR   &kp COLON  &kp DQT  
-   &trans    &skkS        &skkC     &skkA      &skkG       &trans      &trans     &skkG      &skkA      &skkC      &skkS      &trans 
-                           &trans   &trans   &kp SPACE   &kp RET   &trans    &trans
+   &trans    &skkS        &skkC     &skkA      &skkG       &kp GLOBE   &kp GLOBE  &skkG      &skkA      &skkC      &skkS      &trans 
+                                    &trans     &trans      &kp SPACE   &kp RET    &trans     &trans
                         >;
                 };
 
@@ -80,7 +80,7 @@
    &kp TAB    &trans       &trans    &trans    &trans    &trans      &out OUT_TOG &trans       &trans          &trans          &trans         &trans
    &trans     &trans       &trans    &trans    &trans    &trans      &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4
    &trans     &kp F1       &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7       &kp F8          &kp F9          &kp F10        &trans
-                                   &trans     &trans       &kp SPACE      &kp RET  &trans   &trans
+                                     &trans    &trans    &kp SPACE   &kp RET      &trans       &trans
                         >;
                 };
         };				
